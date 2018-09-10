@@ -10,7 +10,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
 import java.io.FileOutputStream
 
-
 /**
  * @author Shigehiro Soejima
  */
@@ -36,8 +35,7 @@ class MainActivity : AppCompatActivity() {
             val view = findViewById<View>(android.R.id.content)
             view.draw(page.canvas)
             finishPage(page)
-            val f = File(Environment.getExternalStorageDirectory(), "test.pdf")
-            FileOutputStream(f).use {
+            FileOutputStream(File(Environment.getExternalStorageDirectory(), "test.pdf")).use {
                 writeTo(it)
             }
         }
